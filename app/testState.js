@@ -1,6 +1,5 @@
 let testState = {
-  something: 'else',
-  another: 'thing'
+  text: 'this is the initial state',
 }
 
 export default testState;

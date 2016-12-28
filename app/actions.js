@@ -1,9 +1,9 @@
-export const FIRST_ACTION = 'FIRST_ACTION';
-export const SECOND_ACTION = 'SECOND_ACTION';
+// export const FIRST_ACTION = 'FIRST_ACTION';
+// export const SECOND_ACTION = 'SECOND_ACTION';
 
-export function myFirstActionCreator(action, text){
+export function myFirstActionCreator(text){
   return {
-    type: action,
+    type: 'FIRST_ACTION',
     text: text
   }
 }
