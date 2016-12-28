@@ -1,11 +1,12 @@
 import React, { PropTypes } from 'react'
 import {
-  Text
+  Text,
+  TouchableHighlight
 } from 'react-native'
 
-const basicView = (state) => {
+const basicView = ({text}) => {
    return (
-     <Text>{ state.text }</Text>
+     <Text>{ text }</Text>
    )
 }
 
