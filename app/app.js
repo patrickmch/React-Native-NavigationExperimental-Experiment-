@@ -15,19 +15,17 @@ import reducer from './reducer';
 let store = createStore(reducer);
 
 export default class app extends Component {
-  testFunction(){
-    console.log('testFunction')
+
+  pressTest(){
+    console.log('pressTest')
   }
 
   render() {
     return (
       <View style = {newStyle.testStyle}>
         <Provider store = { store }>
-          <ShowText />
+          <ShowText/>
         </Provider>
-        <TouchableHighlight onPress = { this.testFunction }>
-          <Text>asdf</Text>
-        </TouchableHighlight>
       </View>
     );
   }

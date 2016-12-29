@@ -6,14 +6,17 @@ import  BasicView  from './BasicView'
 const mapStateToProps = (state) => {
   return {
     text: state.text,
-    onTestClickss: () => {console.log('hllo')}
+    onTextClick: () => {
+      console.log('onTextClick')
+      // dispatch(myFirstActionCreator('You changed it! Jesus Christ!!'))
+    }
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onTextClick: () => {
-      console.log('onTextClick')
+    somethingElse: () => {
+      console.log('somethingElse')
       // dispatch(myFirstActionCreator('You changed it! Jesus Christ!!'))
     }
   }
