@@ -1,5 +1,8 @@
-export function myFirstActionCreator(text){
+export const FIRST_ACTION = 'FIRST_ACTION'
+
+export function myFirstActionCreator(){
+  console.log('action')
   return {
-    text: text
+    type: FIRST_ACTION
   }
 }

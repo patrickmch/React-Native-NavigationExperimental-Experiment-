@@ -14,11 +14,6 @@ const BasicView = ({text, onTextClick, somethingElse}) => {
             { text }
           </Text>
       </TouchableHighlight>
-      <TouchableHighlight onPress={ somethingElse }>
-         <Text>
-           Another
-         </Text>
-     </TouchableHighlight>
     </View>
    )
 }
