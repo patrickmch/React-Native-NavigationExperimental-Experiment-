@@ -3,15 +3,31 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
 } from 'react-native';
-import { provider, store } from 'react-redux';
-import Navigation from './navigation';
+import { Provider } from 'react-redux'
+import { createStore } from 'redux';
+
+import ShowText from './containers/ShowText';
+import reducer from './reducer';
+
+let store = createStore(reducer);
 
 export default class app extends Component {
+
   render() {
     return (
-      <Navigation />
+      <View style = {newStyle.testStyle}>
+        <Provider store = { store }>
+          <ShowText/>
+        </Provider>
+      </View>
     );
   }
 }
+
+newStyle = StyleSheet.create({
+  testStyle : {
+    paddingTop: 20,
+  }
+})
