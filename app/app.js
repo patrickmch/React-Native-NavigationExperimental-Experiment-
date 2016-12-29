@@ -4,21 +4,16 @@ import {
   StyleSheet,
   Text,
   View,
-  TouchableHighlight,
 } from 'react-native';
 import { Provider } from 'react-redux'
 import { createStore } from 'redux';
 
-import ShowText from './ShowText';
+import ShowText from './containers/ShowText';
 import reducer from './reducer';
 
 let store = createStore(reducer);
 
 export default class app extends Component {
-
-  pressTest(){
-    console.log('pressTest')
-  }
 
   render() {
     return (
