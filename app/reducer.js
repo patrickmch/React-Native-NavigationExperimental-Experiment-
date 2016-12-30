@@ -6,7 +6,7 @@ function reducer(state = InitialNavState, action){
         case FIRST_ACTION:
           return {
             ...state,
-            text: 'This is some new text'
+            scenes: ['a', 'different', 'set']
           }
         default:
           return state
