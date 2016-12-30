@@ -6,21 +6,21 @@ import {
 } from 'react-native'
 
 
-const BasicView = ({text, onTextClick, somethingElse}) => {
+const BasicView = ({itemText, onClick}) => {
   return (
     <View>
-       <TouchableHighlight onPress={ onTextClick }>
+       <TouchableHighlight onPress={ onClick }>
           <Text>
-            { text }
+            { itemText }
           </Text>
       </TouchableHighlight>
     </View>
    )
 }
 
-BasicView.PropTypes = {
-  text: PropTypes.string.isRequired,
-  onTextClick: PropTypes.func.isRequired,
-}
+// BasicView.PropTypes = {
+//   text: PropTypes.string.isRequired,
+//   onTextClick: PropTypes.func.isRequired,
+// }
 
 export default BasicView;

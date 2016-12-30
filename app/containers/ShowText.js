@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import  { myFirstActionCreator }  from '../actions'
-import  BasicView  from '../components/BasicView'
+import  ListScenes  from '../components/ListScenes'
 
 
 const mapStateToProps = (state) => {
@@ -18,6 +18,6 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 
-const ShowText = connect(mapStateToProps, mapDispatchToProps)(BasicView)
+const ShowText = connect(mapStateToProps, mapDispatchToProps)(ListScenes)
 
 export default ShowText
