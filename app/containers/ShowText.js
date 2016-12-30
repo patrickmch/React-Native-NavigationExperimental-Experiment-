@@ -5,7 +5,7 @@ import  ListScenes  from '../components/ListScenes'
 
 const mapStateToProps = (state) => {
   return {
-    text: state.text,
+    scenes: state.scenes,
   }
 }
 

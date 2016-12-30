@@ -6,14 +6,16 @@ import {
 import BasicView from './BasicView'
 
 
-const ListScenes = ({text, onTextClick}) => {
-  console.log(text)
+const ListScenes = ({scenes, onTextClick}) => {
   return (
     <ScrollView>
-      <BasicView
-        onClick = { onTextClick }
-        itemText = { text }
-        />
+      {scenes.map((scene, key) =>
+        <BasicView
+          onClick = { onTextClick }
+          itemText = { scene }
+          key = { key }
+          />
+      )}
     </ScrollView>
   )
 }
