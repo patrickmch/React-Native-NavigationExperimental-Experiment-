@@ -1,7 +1,7 @@
 import InitialNavState from './state/InitialNavState'
 import { FIRST_ACTION } from './actions'
-
-function reducer(state = InitialNavState, action){
+import { combineReducers } from 'redux'
+function navigationState(state = InitialNavState, action){
     switch(action.type){
         case FIRST_ACTION:
           return {
@@ -12,5 +12,9 @@ function reducer(state = InitialNavState, action){
           return state
     }
 }
+
+const reducer = combineReducers({
+  navigationState
+})
 
 export default reducer;

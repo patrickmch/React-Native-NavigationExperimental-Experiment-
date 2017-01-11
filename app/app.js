@@ -1,27 +1,28 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import {
   AppRegistry,
   StyleSheet,
   Text,
   View,
-} from 'react-native';
+  NavigationExperimental
+} from 'react-native'
 import { Provider } from 'react-redux'
-import { createStore } from 'redux';
+import { createStore } from 'redux'
+import reducer from './reducer'
+import AppContainer from './containers/AppContainer'
 
-import ShowText from './containers/ShowText';
-import reducer from './reducer';
-
-let store = createStore(reducer);
+let store = createStore(reducer)
 
 export default class app extends Component {
 
   render() {
+
     return (
-      <View style = {newStyle.testStyle}>
-        <Provider store = { store }>
-          <ShowText/>
-        </Provider>
-      </View>
+      <Provider store = { store }>
+        <View>
+          <AppContainer />
+        </View>
+      </Provider>
     );
   }
 }
