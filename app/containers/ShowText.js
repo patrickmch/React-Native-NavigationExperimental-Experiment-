@@ -4,7 +4,7 @@ import  ListScenes  from '../components/ListScenes'
 
 const mapStateToProps = (state) => {
   return {
-    scenes: state.scenes,
+    scenes: state.navigationState.routes,
   }
 }
 

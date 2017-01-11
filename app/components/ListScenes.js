@@ -12,9 +12,9 @@ const ListScenes = ({scenes, onTextClick}) => {
       {scenes.map((scene, index) =>
         <BasicView
           onClick = { onTextClick }
-          itemText = { scene }
+          itemText = { scene.title }
           key = { index }
-          />
+        />
       )}
     </ScrollView>
   )

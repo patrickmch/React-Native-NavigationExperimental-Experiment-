@@ -8,7 +8,7 @@ import {
 } from 'react-native'
 import { connect } from 'react-redux'
 import  { myFirstActionCreator }  from '../actions'
-
+import ShowText from './ShowText'
 
 const {
 	CardStack: NavigationCardStack,
@@ -27,15 +27,12 @@ class AppContainer extends Component {
   }
 
   render() {
-    //navigationState is undefined... likely the problem
-    //it should be coming from reducer.js in the props (or so it seems to be in the example app)
     const { navigationState } = this.props
-    console.log('reducer', navigationState.scenes)
     return (
         <NavigationCardStack
           style = { newStyle.testStyle }
           renderScene = { this._renderScene }
-          navigationState = { navigationState.scenes }
+          navigationState = { navigationState }
         />
     );
   }
