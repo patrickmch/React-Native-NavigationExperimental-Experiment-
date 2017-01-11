@@ -6,13 +6,16 @@ import {
   View,
   NavigationExperimental
 } from 'react-native'
+import { connect } from 'react-redux'
+import  { myFirstActionCreator }  from '../actions'
+
 
 const {
 	CardStack: NavigationCardStack,
 	StateUtils: NavigationStateUtils
 } = NavigationExperimental
 
-export default class AppContainer extends Component {
+class AppContainer extends Component {
 
   constructor(props, context){
     super(props)
@@ -27,12 +30,12 @@ export default class AppContainer extends Component {
     //navigationState is undefined... likely the problem
     //it should be coming from reducer.js in the props (or so it seems to be in the example app)
     const { navigationState } = this.props
-    console.log('reducer', navigationState)
+    console.log('reducer', navigationState.scenes)
     return (
         <NavigationCardStack
           style = { newStyle.testStyle }
           renderScene = { this._renderScene }
-          navigationState = { navigationState }
+          navigationState = { navigationState.scenes }
         />
     );
   }
@@ -43,3 +46,14 @@ newStyle = StyleSheet.create({
     paddingTop: 20,
   }
 })
+
+export default connect(
+	state => ({
+		navigationState: state.navigationState
+	}),
+	dispatch => ({
+		backAction: () => {
+			dispatch(navigatePop())
+		}
+	})
+)(AppContainer)

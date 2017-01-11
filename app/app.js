@@ -13,10 +13,11 @@ import AppContainer from './containers/AppContainer'
 
 let store = createStore(reducer)
 
+
 export default class app extends Component {
 
   render() {
-
+    
     return (
       <Provider store = { store }>
         <View>
