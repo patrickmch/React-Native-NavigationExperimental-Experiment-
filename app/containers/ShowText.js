@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import  { firstAction }  from '../actions'
+import  { firstAction, secondAction }  from '../actions'
 import  ListScenes  from '../components/ListScenes'
 
 const mapStateToProps = (state) => {
@@ -10,10 +10,22 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onTextClick: () => {
-      dispatch(firstAction())
-    }
-  }
+    onTextClick: (key) => {
+      switch (key) {
+        case 'First':
+            dispatch(firstAction())
+          break
+        case 'Second':
+            dispatch(secondAction())
+            break
+        case 'Third':
+            dispatch(firstAction())
+          break
+        default:
+          return
+      }//switch
+    }//onTextClick
+  }//return
 }
 
 

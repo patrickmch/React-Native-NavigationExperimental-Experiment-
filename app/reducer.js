@@ -17,10 +17,11 @@ function navigationState(state = InitialNavState, action){
             ...state,
             index: 1,
             routes: [
-              { key: 'Other', title: 'Other' },
-              { key: 'Newer', title: 'Newer' },
+              { key: 'Fourth', title: 'Other' },
+              { key: 'Fifth', title: 'Newer' },
             ]
-          }
+        }
+
         default:
           return state
     }

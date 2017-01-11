@@ -11,9 +11,8 @@ const ListScenes = ({scenes, onTextClick}) => {
     <ScrollView>
       {scenes.map((scene, index) =>
         <BasicView
-          onClick = { onTextClick }
+          onClick = { () => onTextClick(scene.key) }
           itemText = { scene.title }
-          key = { index }
         />
       )}
     </ScrollView>
