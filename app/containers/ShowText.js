@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import  { myFirstActionCreator }  from '../actions'
+import  { firstAction }  from '../actions'
 import  ListScenes  from '../components/ListScenes'
 
 const mapStateToProps = (state) => {
@@ -11,7 +11,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     onTextClick: () => {
-      dispatch(myFirstActionCreator())
+      dispatch(firstAction())
     }
   }
 }

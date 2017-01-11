@@ -1,8 +1,15 @@
 export const FIRST_ACTION = 'FIRST_ACTION'
 
-export function myFirstActionCreator(){
+export function firstAction(){
   return {
     type: FIRST_ACTION,
+    id: Date.now()
+  }
+}
+
+export function secondAction(){
+  return {
+    type: SECOND_ACTION,
     id: Date.now()
   }
 }

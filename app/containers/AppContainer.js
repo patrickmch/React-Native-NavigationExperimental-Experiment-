@@ -7,7 +7,7 @@ import {
   NavigationExperimental
 } from 'react-native'
 import { connect } from 'react-redux'
-import  { myFirstActionCreator }  from '../actions'
+import  { firstAction, secondAction }  from '../actions'
 import ShowText from './ShowText'
 
 const {

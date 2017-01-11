@@ -1,12 +1,25 @@
 import InitialNavState from './state/InitialNavState'
-import { FIRST_ACTION } from './actions'
+import { FIRST_ACTION, SECOND_ACTION } from './actions'
 import { combineReducers } from 'redux'
 function navigationState(state = InitialNavState, action){
     switch(action.type){
         case FIRST_ACTION:
           return {
             ...state,
-            scenes: ['a', 'different', 'set']
+            index: 1,
+            routes: [
+              { key: 'New', title: 'New' },
+              { key: 'Newer', title: 'Newer' },
+            ]
+          }
+        case SECOND_ACTION:
+          return {
+            ...state,
+            index: 1,
+            routes: [
+              { key: 'Other', title: 'Other' },
+              { key: 'Newer', title: 'Newer' },
+            ]
           }
         default:
           return state

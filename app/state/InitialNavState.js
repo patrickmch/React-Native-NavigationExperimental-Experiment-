@@ -3,6 +3,7 @@ let InitialNavState = {
   routes: [
       { key: 'First', title: 'First' },
       { key: 'Second', title: 'Second' },
+      { key: 'Third', title: 'Third' },
   ]
 }
 
