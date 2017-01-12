@@ -4,11 +4,12 @@ import {
   StyleSheet,
   Text,
   View,
-  NavigationExperimental
+  NavigationExperimental,
+  ScrollView
 } from 'react-native'
 import { connect } from 'react-redux'
 import  { firstAction, secondAction }  from '../actions'
-import ShowText from './ShowText'
+import BasicView from '../components/BasicView'
 
 const {
 	CardStack: NavigationCardStack,
@@ -17,16 +18,28 @@ const {
 
 class AppContainer extends Component {
 
-  _renderScene(){
-    return <ShowText />
+  _renderScene(state, clickFunction){
+
+    return (
+      <ScrollView>
+        {state.routes.map((scene, index) =>
+          <BasicView
+            onClick = { () => clickFunction(scene.key) }
+            itemText = { scene.title }
+            key= { index }
+          />
+        )}
+      </ScrollView>
+    )
   }
 
   render() {
     const { navigationState } = this.props
+    const { onTextClick } = this.props
     return (
         <NavigationCardStack
           style = { newStyle.testStyle }
-          renderScene = { this._renderScene }
+          renderScene = { () => this._renderScene(navigationState, onTextClick) }
           navigationState = { navigationState }
         />
     );
@@ -44,8 +57,8 @@ export default connect(
 		navigationState: state.navigationState.data
 	}),
 	dispatch => ({
-		backAction: () => {
-			dispatch(navigatePop())
-		}
+    onTextClick: (key) => {
+        dispatch(firstAction(key))
+    }//onTextClick
 	})
 )(AppContainer)
