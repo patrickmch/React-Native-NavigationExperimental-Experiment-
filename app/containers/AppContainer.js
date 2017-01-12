@@ -17,18 +17,12 @@ const {
 
 class AppContainer extends Component {
 
-  constructor(props, context){
-    super(props)
-    this._renderScene = this._renderScene.bind(this)
-  }
-
   _renderScene(){
     return <ShowText />
   }
 
   render() {
     const { navigationState } = this.props
-    console.log('navigationState', navigationState);
     return (
         <NavigationCardStack
           style = { newStyle.testStyle }

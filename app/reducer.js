@@ -4,8 +4,9 @@ import { combineReducers } from 'redux'
 
 
 function getData(key){
-console.log(key)
   switch(key){
+    //TODO find out why index must only be '1' for all cases
+    //returns error 'there should only be one scene active, not 0' if index is changed
     case 'First':
       return {
         index: 1,
