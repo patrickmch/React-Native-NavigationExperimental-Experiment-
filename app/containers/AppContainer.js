@@ -19,7 +19,6 @@ const {
 class AppContainer extends Component {
 
   _renderScene(state, clickFunction){
-
     return (
       <ScrollView>
         {state.routes.map((scene, index) =>
@@ -34,15 +33,14 @@ class AppContainer extends Component {
   }
 
   render() {
-    const { navigationState } = this.props
-    const { onTextClick } = this.props
+    const { navigationState, onTextClick } = this.props
     return (
         <NavigationCardStack
           style = { newStyle.testStyle }
           renderScene = { () => this._renderScene(navigationState, onTextClick) }
           navigationState = { navigationState }
         />
-    );
+    )
   }
 }
 
