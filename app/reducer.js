@@ -1,26 +1,57 @@
 import InitialNavState from './state/InitialNavState'
 import { FIRST_ACTION, SECOND_ACTION } from './actions'
 import { combineReducers } from 'redux'
+
+
+function getData(key){
+console.log(key)
+  switch(key){
+    case 'First':
+      return {
+        index: 1,
+        key: Math.random(),
+        title: 'First Scene',
+        routes: [
+          { key: 'New', title: 'New' },
+          { key: 'Newer', title: 'Newer' },
+        ],
+        info: 'A bunch of things about something. We cannot be sure what that is yet'
+      }
+    case 'Second':
+      return {
+        index: 1,
+        key: Math.random(),
+        routes: [
+          { key: 'Stoff', title: 'Stoff' },
+          { key: 'Get Out', title: 'Get Out' },
+        ],
+        title: 'Second Scene',
+        info: 'A bunch of things about something. We cannot be sure what that is yet'
+      }
+    case 'Third':
+      return {
+        index: 1,
+        key: Math.random(),
+        routes: [
+          { key: 'Ceck', title: 'Ceck' },
+          { key: 'Junk', title: 'Junk' },
+        ],
+        title: 'Third Scene',
+        info: 'A bunch of things about something. We cannot be sure what that is yet'
+      }
+    default:
+      return 'hello'
+  }//switch
+}//getData
+
 function navigationState(state = InitialNavState, action){
     switch(action.type){
         case FIRST_ACTION:
           return {
             ...state,
             index: 1,
-            routes: [
-              { key: 'New', title: 'New' },
-              { key: 'Newer', title: 'Newer' },
-            ]
+            data: getData(action.key)
           }
-        case SECOND_ACTION:
-          return {
-            ...state,
-            index: 1,
-            routes: [
-              { key: 'Fourth', title: 'Other' },
-              { key: 'Fifth', title: 'Newer' },
-            ]
-        }
 
         default:
           return state

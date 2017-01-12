@@ -28,6 +28,7 @@ class AppContainer extends Component {
 
   render() {
     const { navigationState } = this.props
+    console.log('navigationState', navigationState);
     return (
         <NavigationCardStack
           style = { newStyle.testStyle }
@@ -46,7 +47,7 @@ newStyle = StyleSheet.create({
 
 export default connect(
 	state => ({
-		navigationState: state.navigationState
+		navigationState: state.navigationState.data
 	}),
 	dispatch => ({
 		backAction: () => {

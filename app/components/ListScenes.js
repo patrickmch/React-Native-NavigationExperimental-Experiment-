@@ -7,12 +7,14 @@ import BasicView from './BasicView'
 
 
 const ListScenes = ({scenes, onTextClick}) => {
+  console.log('scenes', scenes)
   return (
     <ScrollView>
-      {scenes.map((scene, index) =>
+      {scenes.routes.map((scene, index) =>
         <BasicView
           onClick = { () => onTextClick(scene.key) }
           itemText = { scene.title }
+          key= { index }
         />
       )}
     </ScrollView>

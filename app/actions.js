@@ -1,10 +1,11 @@
 export const FIRST_ACTION = 'FIRST_ACTION'
 export const SECOND_ACTION = 'SECOND_ACTION'
 
-export function firstAction(){
+export function firstAction(scene_key){
   return {
     type: FIRST_ACTION,
-    id: Date.now()
+    id: Date.now(),
+    key: scene_key,
   }
 }
 
