@@ -15,12 +15,12 @@ const {
 
 class AppContainer extends Component {
   render() {
-    const { navigationState, onTextClick } = this.props
+    // const { navigationState, onTextClick } = this.props
     return (
         <NavigationCardStack
           style = { newStyle.testStyle }
-          navigationState = { navigationState }
-          renderScene = { () => _renderScene(navigationState, onTextClick) }
+          navigationState = { this.props.navigationState }
+          renderScene = { () => _renderScene(this.props) }
           renderHeader = {props => (
               <Text>{ props.navigationState.title }</Text>
             )

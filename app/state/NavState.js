@@ -27,7 +27,7 @@ export const getData = (key) => {
         key: Math.random(),
         title: 'First Scene',
         routes: [
-          { key: 'New', title: 'New' },
+          { key: 'Fourth', title: 'New' },
           { key: 'Newer', title: 'Newer' },
         ],
         info: 'A bunch of things about something. We cannot be sure what that is yet',
@@ -53,6 +53,17 @@ export const getData = (key) => {
         ],
         title: 'Third Scene',
         info: 'A bunch of things about something. We cannot be sure what that is yet'
+      }
+    case 'Fourth':
+      return {
+        index: 0,
+        key: Math.random(),
+        routes: [
+          { key: 'hello', title: 'whateve' }
+        ],
+        title: 'A new scene',
+        info: 'This is more info about something else.',
+        viewToRender: 'ModuleView',
       }
     default:
       return 'hello'
