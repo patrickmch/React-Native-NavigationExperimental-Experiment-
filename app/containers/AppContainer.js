@@ -3,6 +3,7 @@ import {
   AppRegistry,
   StyleSheet,
   NavigationExperimental,
+  Text
 } from 'react-native'
 import { connect } from 'react-redux'
 import  { firstAction, secondAction }  from '../actions'
@@ -18,9 +19,13 @@ class AppContainer extends Component {
     return (
         <NavigationCardStack
           style = { newStyle.testStyle }
-          renderScene = { () => _renderScene(navigationState, onTextClick) }
           navigationState = { navigationState }
-        />
+          renderScene = { () => _renderScene(navigationState, onTextClick) }
+          renderHeader = {props => (
+              <Text>{ props.navigationState.title }</Text>
+            )
+          }//renderHeader
+        />//NavigationCardStack
     )//return
   }//render
 }//AppContainer

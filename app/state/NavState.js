@@ -8,7 +8,8 @@ export const InitialNavState = {
         { key: 'First', title: 'First' },
         { key: 'Second', title: 'Second' },
         { key: 'Third', title: 'Third' },
-      ]
+      ],
+      title: 'Welcome'
   }//data
 }//InitialNavState
 
