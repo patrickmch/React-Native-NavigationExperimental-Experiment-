@@ -1,3 +1,6 @@
+import { _renderScene } from '../components/_renderScene'
+
+
 export const InitialNavState = {
   data: {
       index: 0,
@@ -5,13 +8,14 @@ export const InitialNavState = {
         { key: 'First', title: 'First' },
         { key: 'Second', title: 'Second' },
         { key: 'Third', title: 'Third' },
-      ]//routes
+      ]
   }//data
 }//InitialNavState
 
 
 //getData: function to return routes and associated data
-//called inside the reducer and passed a key based on which item was clicked
+//called inside the reducer and passed a key from the action
+//based on which item was clicked
 export const getData = (key) => {
   switch(key){
     //TODO find out why index must only be '1' for all cases
@@ -25,7 +29,7 @@ export const getData = (key) => {
           { key: 'New', title: 'New' },
           { key: 'Newer', title: 'Newer' },
         ],
-        info: 'A bunch of things about something. We cannot be sure what that is yet'
+        info: 'A bunch of things about something. We cannot be sure what that is yet',
       }
     case 'Second':
       return {

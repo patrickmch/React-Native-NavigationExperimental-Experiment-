@@ -7,7 +7,6 @@ function navigationState(state = InitialNavState, action){
         case FIRST_ACTION:
           return {
             ...state,
-            index: 1,
             data: getData(action.key)
           }
 
