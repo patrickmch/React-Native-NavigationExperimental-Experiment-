@@ -1,4 +1,5 @@
 import BasicView from './BasicView'
+import PreviousScene from './PreviousScene'
 import React, { Component, PropTypes } from 'react'
 import {
   Text,
@@ -12,7 +13,10 @@ export function _renderScene(props){
   switch(navigationState.viewToRender){
     case 'ModuleView':
       return(
-        <Text>{ navigationState.info }</Text>
+        <View>
+          <Text>{ navigationState.info }</Text>
+          <PreviousScene />
+        </View>
       )
     default:
       return (
@@ -24,6 +28,7 @@ export function _renderScene(props){
               key= { index }
             />
           )}
+          <PreviousScene />
         </ScrollView>
       )
   }

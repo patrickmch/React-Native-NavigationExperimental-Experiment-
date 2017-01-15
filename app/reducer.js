@@ -1,15 +1,19 @@
-import { InitialNavState, getData } from './state/NavState'
-import { FIRST_ACTION, SECOND_ACTION } from './actions'
+import { InitialNavState } from './state/NavState'
+import { PUSH, POP } from './actions'
 import { combineReducers } from 'redux'
 
 function navigationState(state = InitialNavState, action){
     switch(action.type){
-        case FIRST_ACTION:
+        case PUSH:
           return {
             ...state,
-            data: getData(action.key)
+            data:action.payload
           }
-
+        case POP:
+          console.log('pop');
+          return {
+            ...state
+          }
         default:
           return state
     }

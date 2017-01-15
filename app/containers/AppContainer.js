@@ -6,7 +6,7 @@ import {
   Text
 } from 'react-native'
 import { connect } from 'react-redux'
-import  { firstAction, secondAction }  from '../actions'
+import  { push, pop }  from '../actions'
 import { _renderScene } from '../components/_renderScene'
 const {
 	CardStack: NavigationCardStack,
@@ -42,7 +42,7 @@ export default connect(
 	}),
 	dispatch => ({
     onTextClick: (key) => {
-        dispatch(firstAction(key))
+        dispatch(push(key))
     }//onTextClick
 	})
 )(AppContainer)

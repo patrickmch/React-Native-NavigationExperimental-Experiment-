@@ -1,17 +1,20 @@
-export const FIRST_ACTION = 'FIRST_ACTION'
-export const SECOND_ACTION = 'SECOND_ACTION'
+import { getData } from './state/NavState'
 
-export function firstAction(scene_key){
+export const PUSH = 'PUSH'
+export const POP = 'POP'
+
+export function push(scene_key){
   return {
-    type: FIRST_ACTION,
+    type: PUSH,
     id: Date.now(),
+    payload: getData(scene_key),
     key: scene_key,
   }
 }
 
-export function secondAction(){
+export function pop(){
   return {
-    type: SECOND_ACTION,
+    type: POP,
     id: Date.now()
   }
 }
