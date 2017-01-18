@@ -6,7 +6,7 @@ export const POP = 'POP'
 export function push(scene_id){
   return {
     type: PUSH,
-    id: Date.now(),
+    action_id: Date.now(),
     payload: getData[scene_id],
   }
 }
@@ -14,6 +14,6 @@ export function push(scene_id){
 export function pop(){
   return {
     type: POP,
-    id: Date.now()
+    action_id: Date.now()
   }
 }
