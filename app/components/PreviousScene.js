@@ -6,7 +6,6 @@ import {
 } from 'react-native'
 
 const PreviousScene = ({backText, goBack}) =>{
-    // console.log('goback', goBack)
     return (
       <View>
         <TouchableHighlight onPress = { goBack }>

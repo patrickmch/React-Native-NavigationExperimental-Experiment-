@@ -2,7 +2,7 @@ import { _renderScene } from '../components/_renderScene'
 
 
 export const InitialNavState = {
-  data: {
+  
       index: 0,
       routes: [
         { key: 'First', title: 'First' },
@@ -10,20 +10,20 @@ export const InitialNavState = {
         { key: 'Third', title: 'Third' },
       ],
       title: 'Welcome'
-  }//data
+
 }//InitialNavState
 
 
 //getData: function to return routes and associated data
 //called inside the reducer and passed a key from the action
 //based on which item was clicked
-export const getData = (key) => {
+export const getData = (key, index) => {
+
+  // var { index } = InitialNavState.data
+
   switch(key){
-    //TODO find out why index must only be '1' for all cases
-    //returns error 'there should only be one scene active, not 0' if index is changed
     case 'First':
       return {
-        index: 1,
         key: Math.random(),
         title: 'First Scene',
         routes: [
@@ -34,7 +34,6 @@ export const getData = (key) => {
       }
     case 'Second':
       return {
-        index: 1,
         key: Math.random(),
         routes: [
           { key: 'Stoff', title: 'Stoff' },
@@ -45,7 +44,6 @@ export const getData = (key) => {
       }
     case 'Third':
       return {
-        index: 1,
         key: Math.random(),
         routes: [
           { key: 'Ceck', title: 'Ceck' },
@@ -55,8 +53,9 @@ export const getData = (key) => {
         info: 'A bunch of things about something. We cannot be sure what that is yet'
       }
     case 'Fourth':
+      console.log('current index', index)
+      console.log('incremented', index+1);
       return {
-        index: 0,
         key: Math.random(),
         routes: [
           { key: 'hello', title: 'whateve' }

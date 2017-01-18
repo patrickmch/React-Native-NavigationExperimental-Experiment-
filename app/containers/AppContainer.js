@@ -38,7 +38,7 @@ newStyle = StyleSheet.create({
 
 export default connect(
 	state => ({
-		navigationState: state.navigationState.data,
+		navigationState: state.navigationState,
     backText: 'Back'
 	}),
 	dispatch => ({
