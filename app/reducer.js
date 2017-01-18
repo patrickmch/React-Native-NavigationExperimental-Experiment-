@@ -4,7 +4,7 @@ import { combineReducers } from 'redux'
 
 function navigationState(state = InitialNavState, action){
     const { index } = state
-    console.log('state', state);
+    // console.log('state', state);
     switch(action.type){
         case PUSH:
           let obj= {
@@ -12,11 +12,10 @@ function navigationState(state = InitialNavState, action){
             index:index+1,
             ...action.payload
           }
-          console.log('obj', obj)
           return obj
         case POP:
-          console.log('pop')
-          console.log('pop_state', state)
+          // console.log('pop')
+          // console.log('pop_state', state)
           return {
             ...state,
             routes: state.prevRoutes,

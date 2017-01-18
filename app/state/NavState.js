@@ -1,13 +1,15 @@
 import { _renderScene } from '../components/_renderScene'
-
+//generates random string
+genKey = () =>{
+    return Math.random().toString(36).substr(2, 5)
+}
 
 export const InitialNavState = {
-  
       index: 0,
       routes: [
-        { key: 'First', title: 'First' },
-        { key: 'Second', title: 'Second' },
-        { key: 'Third', title: 'Third' },
+        { key:genKey(), id: 1, title: 'First' },
+        { key:genKey(), id: 2, title: 'Second' },
+        { key:genKey(), id: 3, title: 'Third' },
       ],
       title: 'Welcome'
 
@@ -15,56 +17,39 @@ export const InitialNavState = {
 
 
 //getData: function to return routes and associated data
-//called inside the reducer and passed a key from the action
+//called inside the reducer and passed a id from the action
 //based on which item was clicked
-export const getData = (key, index) => {
-
-  // var { index } = InitialNavState.data
-
-  switch(key){
-    case 'First':
-      return {
-        key: Math.random(),
+export const getData = {
+  1: {
         title: 'First Scene',
         routes: [
-          { key: 'Fourth', title: 'New' },
-          { key: 'Newer', title: 'Newer' },
+          { key:genKey(), id: 4, title: 'New' },
+          { key:genKey(), id: 5, title: 'Newer' },
         ],
         info: 'A bunch of things about something. We cannot be sure what that is yet',
-      }
-    case 'Second':
-      return {
-        key: Math.random(),
+      },
+  2: {
         routes: [
-          { key: 'Stoff', title: 'Stoff' },
-          { key: 'Get Out', title: 'Get Out' },
+          { key:genKey(), id: 6, title: 'Stoff' },
+          { key:genKey(), id: 7, title: 'Get Out' },
         ],
         title: 'Second Scene',
         info: 'A bunch of things about something. We cannot be sure what that is yet'
-      }
-    case 'Third':
-      return {
-        key: Math.random(),
+      },
+  3: {
         routes: [
-          { key: 'Ceck', title: 'Ceck' },
-          { key: 'Junk', title: 'Junk' },
+          { key:genKey(), id: 8, title: 'Ceck' },
+          { key:genKey(), id: 9, title: 'Junk' },
         ],
         title: 'Third Scene',
         info: 'A bunch of things about something. We cannot be sure what that is yet'
-      }
-    case 'Fourth':
-      console.log('current index', index)
-      console.log('incremented', index+1);
-      return {
-        key: Math.random(),
+      },
+  4: {
         routes: [
-          { key: 'hello', title: 'whateve' }
+          { key:genKey(), id: 10, title: 'whateve' }
         ],
         title: 'A new scene',
         info: 'This is more info about something else.',
         viewToRender: 'ModuleView',
-      }
-    default:
-      return 'hello'
-  }//switch
+      },
 }//getData

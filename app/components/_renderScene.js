@@ -22,12 +22,11 @@ export function _renderScene(props){
         </View>
       )
     default:
-      console.log('backtext', navigationState.backText);
       return (
         <ScrollView>
           {navigationState.routes.map((route, index) =>
             <BasicView
-              onClick = { () => onTextClick(route.key) }
+              onClick = { () => onTextClick(route.id) }
               itemText = { route.title }
               key= { index }
             />

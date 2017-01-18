@@ -42,7 +42,7 @@ export default connect(
     backText: 'Back'
 	}),
 	dispatch => ({
-    onTextClick: (key) => dispatch(push(key)),
+    onTextClick: (id) => dispatch(push(id)),
     navigateBack: () => dispatch(pop())
 	})
 )(AppContainer)
