@@ -15,10 +15,14 @@ export function _renderScene(props){
       return(
         <View>
           <Text>{ navigationState.info }</Text>
-          <PreviousScene />
+          <PreviousScene
+            goBack={ props.navigateBack }
+            backText={ props.backText }
+          />
         </View>
       )
     default:
+      console.log('backtext', navigationState.backText);
       return (
         <ScrollView>
           {navigationState.routes.map((route, index) =>
@@ -28,7 +32,10 @@ export function _renderScene(props){
               key= { index }
             />
           )}
-          <PreviousScene />
+          <PreviousScene
+            goBack={ props.navigateBack }
+            backText={ props.backText }
+          />
         </ScrollView>
       )
   }

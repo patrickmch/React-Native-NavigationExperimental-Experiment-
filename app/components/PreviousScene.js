@@ -5,11 +5,12 @@ import {
   View
 } from 'react-native'
 
-const PreviousScene = () =>{
+const PreviousScene = ({backText, goBack}) =>{
+    // console.log('goback', goBack)
     return (
       <View>
-        <TouchableHighlight onPress = { () => console.log('Previous') }>
-          <Text>Previous</Text>
+        <TouchableHighlight onPress = { goBack }>
+          <Text>{ backText }</Text>
         </TouchableHighlight>
       </View>
     )

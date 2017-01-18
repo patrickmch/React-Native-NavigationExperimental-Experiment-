@@ -38,11 +38,11 @@ newStyle = StyleSheet.create({
 
 export default connect(
 	state => ({
-		navigationState: state.navigationState.data
+		navigationState: state.navigationState.data,
+    backText: 'Back'
 	}),
 	dispatch => ({
-    onTextClick: (key) => {
-        dispatch(push(key))
-    }//onTextClick
+    onTextClick: (key) => dispatch(push(key)),
+    navigateBack: () => dispatch(pop())
 	})
 )(AppContainer)
