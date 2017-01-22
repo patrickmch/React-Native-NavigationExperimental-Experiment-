@@ -4,14 +4,19 @@ import { combineReducers } from 'redux'
 
 function navigationState(state = getData[0], action){
     const { index } = state
-    console.log('state', state);
     switch(action.type){
         case PUSH:
           let obj= {
             index:index+1,
-            ...action.payload
+            ...action.payload,
+            routes:[
+              ...state.routes,
+              {
+                key: Date.now().toString()
+              }
+            ],
           }
-          console.log('obj', obj);
+          console.log('push object', obj);
           return obj
         case POP:
           return index > 0 ? {

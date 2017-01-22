@@ -15,7 +15,7 @@ const {
 
 class AppContainer extends Component {
   render() {
-    // const { navigationState, onTextClick } = this.props
+    console.log('NavigationCardStack', this.props)
     return (
         <NavigationCardStack
           style = { newStyle.testStyle }

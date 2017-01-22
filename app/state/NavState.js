@@ -5,61 +5,70 @@ genKey = () =>{
     return Math.random().toString(36).substr(7)
 }
 
-// export const InitialNavState = {
-//       index: 0,
-//       routes: [
-//         { key:genKey(), id: 1, title: 'First' },
-//         { key:genKey(), id: 2, title: 'Second' },
-//         { key:genKey(), id: 3, title: 'Third' },
-//       ],
-//       title: 'Welcome'
-//
-// }//InitialNavState
-
 export const getData = {
   0: {
         index: 0,
         routes: [
-          { key:genKey(), id: 1, title: 'First' },
-          { key:genKey(), id: 2, title: 'Second' },
-          { key:genKey(), id: 3, title: 'Third' },
+          {
+            key: Date.now().toString(),
+            id: 0
+          }
         ],
-        title: 'Welcome'
+        title: 'Welcome',
+        potentialRoutes: [
+          { id: 1, title: 'First' },
+          { id: 2, title: 'Second' },
+          { id: 3, title: 'Third' },
+        ]
       },
   1: {
         title: 'First Scene',
+        key: genKey(),
         parent: 0,
-        routes: [
-          { key:genKey(), id: 4, title: 'New' },
-          { key:genKey(), id: 5, title: 'Newer' },
+        potentialRoutes: [
+          { id: 4, title: 'New' },
+          { id: 5, title: 'Newer' },
         ],
         info: 'A bunch of things about something. We cannot be sure what that is yet',
       },
   2: {
-        routes: [
-          { key:genKey(), id: 6, title: 'Stoff' },
-          { key:genKey(), id: 7, title: 'Get Out' },
+        potentialRoutes: [
+          { id: 6, title: 'Stoff' },
+          { id: 7, title: 'Get Out' },
         ],
+        key: genKey(),
         parent: 0,
         title: 'Second Scene',
         info: 'A bunch of things about something. We cannot be sure what that is yet'
       },
   3: {
-        routes: [
-          { key:genKey(), id: 8, title: 'Ceck' },
-          { key:genKey(), id: 9, title: 'Junk' },
+        potentialRoutes: [
+          { id: 8, title: 'Ceck' },
+          { id: 9, title: 'Junk' },
         ],
+        key: genKey(),
         parent: 0,
         title: 'Third Scene',
         info: 'A bunch of things about something. We cannot be sure what that is yet'
       },
   4: {
-        routes: [
-          { key:genKey(), id: 10, title: 'whateve' }
-        ],
-        parent: 1,
-        title: 'A new scene',
-        info: 'This is more info about something else.',
-        viewToRender: 'ModuleView',
+          title: 'Something',
+          key: genKey(),
+          parent: 1,
+          potentialRoutes: [
+            { id: 10, title: 'Nothing' },
+            { id: 11, title: 'Anything' },
+          ],
+          info: 'A bunch of things about something. We cannot be sure what that is yet',
+      },
+  5: {
+          title: 'NEWTITLE',
+          key: genKey(),
+          parent: 1,
+          potentialRoutes: [
+            { id: 12, title: 'asdf' },
+            { id: 13, title: 'Anyasdfffthing' },
+          ],
+          info: 'A bunch of things about something. We cannot be sure what that is yet',
       },
 }//getData
