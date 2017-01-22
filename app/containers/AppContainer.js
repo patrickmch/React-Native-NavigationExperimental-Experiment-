@@ -16,13 +16,14 @@ const {
 class AppContainer extends Component {
   render() {
     console.log('NavigationCardStack', this.props)
+    const { navigationState } = this.props
     return (
         <NavigationCardStack
           style = { newStyle.testStyle }
           navigationState = { this.props.navigationState }
           renderScene = { () => _renderScene(this.props) }
           renderHeader = {props => (
-              <Text>{ props.navigationState.title }</Text>
+              <Text>{ navigationState.routes[navigationState.index].title }</Text>
             )
           }//renderHeader
         />//NavigationCardStack

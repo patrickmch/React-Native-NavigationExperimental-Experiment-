@@ -26,7 +26,7 @@ export function _renderScene(props){
   //   default:
       return (
         <ScrollView>
-          {navigationState.potentialRoutes.map((route, index) =>
+          {navigationState.routes[navigationState.index].potentialRoutes.map((route, index) =>
             <BasicView
               onClick = { () => onTextClick(route.id) }
               itemText = { route.title }

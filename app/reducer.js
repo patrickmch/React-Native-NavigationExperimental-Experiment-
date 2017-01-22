@@ -8,20 +8,20 @@ function navigationState(state = getData[0], action){
         case PUSH:
           let obj= {
             index:index+1,
-            ...action.payload,
             routes:[
               ...state.routes,
               {
-                key: Date.now().toString()
+                key: Date.now().toString(),
+                ...action.payload
               }
             ],
           }
-          console.log('push object', obj);
+          // console.log('push object', obj);
           return obj
         case POP:
           return index > 0 ? {
             index: index-1,
-            ...getData[state.parent],
+            routes: state.routes.slice(0, state.routes.length -1)
           } : state
         default:
           return state
