@@ -10,6 +10,7 @@ import {
 // var inc=0
 export function _renderScene(props){
   const { navigationState, onTextClick } = props
+  const { routes, index } = navigationState
   // console.log('props',props, inc);
   // inc++
   // switch(navigationState.viewToRender){
@@ -26,7 +27,7 @@ export function _renderScene(props){
   //   default:
       return (
         <ScrollView>
-          {navigationState.routes[navigationState.index].potentialRoutes.map((route, index) =>
+          {routes[index].potentialRoutes.map((route, index) =>
             <BasicView
               onClick = { () => onTextClick(route.id) }
               itemText = { route.title }

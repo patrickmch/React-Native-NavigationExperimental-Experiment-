@@ -3,13 +3,13 @@ import { PUSH, POP } from './actions'
 import { combineReducers } from 'redux'
 
 function navigationState(state = getData[0], action){
-    const { index } = state
+    const { index, routes } = state
     switch(action.type){
         case PUSH:
           let obj= {
             index:index+1,
             routes:[
-              ...state.routes,
+              ...routes,
               {
                 key: Date.now().toString(),
                 ...action.payload
@@ -21,7 +21,7 @@ function navigationState(state = getData[0], action){
         case POP:
           return index > 0 ? {
             index: index-1,
-            routes: state.routes.slice(0, state.routes.length -1)
+            routes: routes.slice(0, routes.length -1)
           } : state
         default:
           return state
