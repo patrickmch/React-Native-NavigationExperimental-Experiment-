@@ -3,7 +3,8 @@ import {
   AppRegistry,
   StyleSheet,
   NavigationExperimental,
-  Text
+  Text,
+  View
 } from 'react-native'
 import { connect } from 'react-redux'
 import  { push, pop }  from '../actions'
@@ -12,6 +13,8 @@ const {
 	CardStack: NavigationCardStack,
 	StateUtils: NavigationStateUtils
 } = NavigationExperimental
+
+//TODO how to handle back button???
 
 class AppContainer extends Component {
   render() {
@@ -23,7 +26,9 @@ class AppContainer extends Component {
           navigationState = { navigationState }
           renderScene = { () => _renderScene(this.props) }
           renderHeader = {props => (
-              <Text>{ routes[index].title }</Text>
+              <View>
+                <Text>{ routes[index].title }</Text>
+              </View>
             )
           }//renderHeader
         />//NavigationCardStack

@@ -7,27 +7,26 @@ import {
   View,
   ScrollView,
 } from 'react-native'
-// var inc=0
+
 export function _renderScene(props){
   const { navigationState, onTextClick } = props
   const { routes, index } = navigationState
-  // console.log('props',props, inc);
-  // inc++
-  // switch(navigationState.viewToRender){
-  //   case 'ModuleView':
-  //     return(
-  //       <View>
-  //         <Text>{ navigationState.info }</Text>
-  //         <PreviousScene
-  //           goBack={ props.navigateBack }
-  //           backText={ props.backText }
-  //         />
-  //       </View>
-  //     )
-  //   default:
+  const currentRoute = routes[index]
+
+  if(currentRoute.potentialRoutes === undefined){
+      return(
+        <View>
+          <Text>{ currentRoute.info }</Text>
+          <PreviousScene
+              goBack={ props.navigateBack }
+              backText={ props.backText }
+          />
+        </View>
+      )
+  } else {
       return (
         <ScrollView>
-          {routes[index].potentialRoutes.map((route, index) =>
+          {currentRoute.potentialRoutes.map((route, index) =>
             <BasicView
               onClick = { () => onTextClick(route.id) }
               itemText = { route.title }
@@ -40,5 +39,5 @@ export function _renderScene(props){
           />
         </ScrollView>
       )
-  // }
-}
+  }
+}//renderScene
