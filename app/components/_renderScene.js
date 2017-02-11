@@ -12,7 +12,7 @@ export function _renderScene(props){
   const { navigationState, onTextClick } = props
   const { routes, index } = navigationState
   const currentRoute = routes[index]
-
+  //if there are no potential routes keep from erroring 
   if(currentRoute.potentialRoutes === undefined){
       return(
         <View>

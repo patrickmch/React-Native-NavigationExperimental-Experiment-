@@ -6,18 +6,17 @@ function navigationState(state = getData[0], action){
     const { index, routes } = state
     switch(action.type){
         case PUSH:
-          let obj= {
+          return {
             index:index+1,
             routes:[
               ...routes,
               {
-                key: Date.now().toString(),
+                key: Date.now(),
                 ...action.payload
               }
             ],
           }
-          // console.log('push object', obj);
-          return obj
+
         case POP:
           return index > 0 ? {
             index: index-1,

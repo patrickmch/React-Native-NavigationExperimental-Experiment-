@@ -18,9 +18,9 @@ const BasicView = ({itemText, onClick}) => {
    )
 }
 
-// BasicView.PropTypes = {
-//   text: PropTypes.string.isRequired,
-//   onTextClick: PropTypes.func.isRequired,
-// }
+BasicView.PropTypes = {
+  text: PropTypes.string.isRequired,
+  onTextClick: PropTypes.func.isRequired,
+}
 
 export default BasicView;

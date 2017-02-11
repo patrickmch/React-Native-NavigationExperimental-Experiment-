@@ -1,10 +1,5 @@
 import { _renderScene } from '../components/_renderScene'
 
-//generates random string
-genKey = () =>{
-    return Math.random().toString(36).substr(7)
-}
-
 export const getData = {
   0: {
         index: 0,
@@ -30,7 +25,6 @@ export const getData = {
         info: 'A bunch of things about something. We cannot be sure what that is yet',
       },
   2: {
-        //TODO insert some other data here for further nav testing
         title: 'Second Scene',
         info: 'A bunch of things about something. We cannot be sure what that is yet'
       },
