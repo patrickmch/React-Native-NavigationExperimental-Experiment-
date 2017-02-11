@@ -9,6 +9,7 @@ function navigationState(state = getData[0], action){
         case PUSH:
           newState = {
             index:index+1,
+            //no integers accepted, hence the type casting
             key: Date.now().toString(),
             ...action.payload
           }

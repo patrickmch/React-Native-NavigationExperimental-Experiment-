@@ -11,7 +11,8 @@ import  { push, pop }  from '../actions'
 import { _renderScene } from '../components/_renderScene'
 const {
 	CardStack: NavigationCardStack,
-	StateUtils: NavigationStateUtils
+	StateUtils: NavigationStateUtils,
+  Card: NavigationCard
 } = NavigationExperimental
 
 //TODO how to handle back button???
