@@ -19,19 +19,19 @@ export const getData = {
   1: {
         title: 'First Scene',
         potentialRoutes: [
-          { id: 4, title: 'New' },
-          { id: 5, title: 'Newer' },
+          { id: 4, title: 'Fourth Scene' },
+          { id: 5, title: 'Fifth Scene' },
         ],
         info: 'A bunch of things about something. We cannot be sure what that is yet',
       },
   2: {
         title: 'Second Scene',
-        info: 'A bunch of things about something. We cannot be sure what that is yet'
+        info: 'Placeholder Text...'
       },
   3: {
         potentialRoutes: [
-          { id: 8, title: 'Ceck' },
-          { id: 9, title: 'Junk' },
+          { id: 8, title: 'Eighth Scene' },
+          { id: 9, title: 'Ninth Scene' },
         ],
         title: 'Third Scene',
         info: 'A bunch of things about something. We cannot be sure what that is yet'
@@ -39,16 +39,16 @@ export const getData = {
   4: {
         title: 'Something',
         potentialRoutes: [
-          { id: 10, title: 'Nothing' },
-          { id: 11, title: 'Anything' },
+          { id: 10, title: 'Tenth Scene' },
+          { id: 11, title: '11th Scene' },
         ],
         info: 'A bunch of things about something. We cannot be sure what that is yet',
       },
   5: {
         title: 'NEWTITLE',
         potentialRoutes: [
-          { id: 12, title: 'asdf' },
-          { id: 13, title: 'Anyasdfffthing' },
+          { id: 12, title: '12th Scene' },
+          { id: 13, title: '13th Scene' },
         ],
         info: 'A bunch of things about something. We cannot be sure what that is yet',
       },

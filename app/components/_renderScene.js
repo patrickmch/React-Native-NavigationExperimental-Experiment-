@@ -12,7 +12,8 @@ export function _renderScene(props){
   const { navigationState, onTextClick } = props
   const { routes, index } = navigationState
   const currentRoute = routes[index]
-  //if there are no potential routes keep from erroring 
+  //if there are no potential routes keep from erroring
+  //TODO two separate declarations of PreviousScene are identical- find some way to eliminate this redundancy
   if(currentRoute.potentialRoutes === undefined){
       return(
         <View>

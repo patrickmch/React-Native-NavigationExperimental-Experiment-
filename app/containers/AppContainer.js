@@ -43,6 +43,14 @@ newStyle = StyleSheet.create({
   }
 })
 
+AppContainer.PropTypes = {
+  navigationState: PropTypes.object,
+  backText: PropTypes.string,
+  onTextClick: PropTypes.func,
+  navigateBack: PropTypes.func
+
+}
+
 export default connect(
 	state => ({
 		navigationState: state.navigationState,
