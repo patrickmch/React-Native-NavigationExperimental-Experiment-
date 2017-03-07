@@ -5,6 +5,7 @@ import * as NavigationStateUtils from 'NavigationStateUtils'
 
 function navigationState(state = getData[0], action){
     const { index, routes } = state
+    //NavigationStateUtils.push automatically generates the required 'routes' array in our state
     switch(action.type){
         case PUSH:
           newState = {

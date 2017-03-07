@@ -25,6 +25,7 @@ export function _renderScene(props){
         </View>
       )
   } else {
+      //view updating too quickly bug: onTextClick returns the new route before the view updates. The difference between other working apps and yours is that yours does not have a new view for each scene. This means that the view you've provided will be both the new view and the old view, but both will update at the same time.
       return (
         <ScrollView>
           {currentRoute.potentialRoutes.map((route, index) =>

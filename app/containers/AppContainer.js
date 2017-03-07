@@ -48,7 +48,6 @@ AppContainer.PropTypes = {
   backText: PropTypes.string,
   onTextClick: PropTypes.func,
   navigateBack: PropTypes.func
-
 }
 
 export default connect(

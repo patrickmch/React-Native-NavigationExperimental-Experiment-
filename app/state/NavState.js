@@ -5,7 +5,7 @@ export const getData = {
         index: 0,
         routes: [
           {
-            key: Date.now().toString(),
+            key: 'root',
             id: 0,
             title: 'Welcome',
             potentialRoutes: [
@@ -22,7 +22,6 @@ export const getData = {
           { id: 4, title: 'Fourth Scene' },
           { id: 5, title: 'Fifth Scene' },
         ],
-        info: 'A bunch of things about something. We cannot be sure what that is yet',
       },
   2: {
         title: 'Second Scene',
@@ -34,7 +33,6 @@ export const getData = {
           { id: 9, title: 'Ninth Scene' },
         ],
         title: 'Third Scene',
-        info: 'A bunch of things about something. We cannot be sure what that is yet'
       },
   4: {
         title: 'Something',
@@ -42,7 +40,6 @@ export const getData = {
           { id: 10, title: 'Tenth Scene' },
           { id: 11, title: '11th Scene' },
         ],
-        info: 'A bunch of things about something. We cannot be sure what that is yet',
       },
   5: {
         title: 'NEWTITLE',
@@ -50,6 +47,5 @@ export const getData = {
           { id: 12, title: '12th Scene' },
           { id: 13, title: '13th Scene' },
         ],
-        info: 'A bunch of things about something. We cannot be sure what that is yet',
       },
 }//getData
