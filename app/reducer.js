@@ -14,7 +14,7 @@ function navigationState(state = getData[0], action){
             key: Date.now().toString(),
             ...action.payload
           }
-          console.log(NavigationStateUtils.push(state, newState));
+          // console.log(NavigationStateUtils.push(state, newState));
           return NavigationStateUtils.push(state, newState)
         case POP:
           if(index > 0){

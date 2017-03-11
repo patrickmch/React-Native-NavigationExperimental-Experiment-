@@ -25,7 +25,7 @@ class AppContainer extends Component {
         <NavigationCardStack
           style = { newStyle.testStyle }
           navigationState = { navigationState }
-          renderScene = { () => _renderScene(this.props) }
+          renderScene = { ({scene}) => _renderScene({scene}, this.props) }
           renderHeader = {props => (
               <View>
                 <Text>{ routes[index].title }</Text>

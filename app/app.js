@@ -1,11 +1,4 @@
 import React, { Component, PropTypes } from 'react';
-import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View,
-  NavigationExperimental
-} from 'react-native'
 import { Provider } from 'react-redux'
 import { createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
@@ -27,9 +20,3 @@ export default class app extends Component {
     );
   }
 }
-
-newStyle = StyleSheet.create({
-  testStyle : {
-    paddingTop: 20,
-  }
-})

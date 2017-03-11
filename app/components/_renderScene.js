@@ -8,16 +8,16 @@ import {
   ScrollView,
 } from 'react-native'
 
-export function _renderScene(props){
-  const { navigationState, onTextClick } = props
-  const { routes, index } = navigationState
-  const currentRoute = routes[index]
+export function _renderScene({scene}, props){
+  const { onTextClick } = props
+  const { route, index } = scene
+
   //if there are no potential routes keep from erroring
   //TODO two separate declarations of PreviousScene are identical- find some way to eliminate this redundancy
-  if(currentRoute.potentialRoutes === undefined){
+  if(route.potentialRoutes === undefined){
       return(
         <View>
-          <Text>{ currentRoute.info }</Text>
+          <Text>{ route.info }</Text>
           <PreviousScene
               goBack={ props.navigateBack }
               backText={ props.backText }
@@ -25,13 +25,12 @@ export function _renderScene(props){
         </View>
       )
   } else {
-      //view updating too quickly bug: onTextClick returns the new route before the view updates. The difference between other working apps and yours is that yours does not have a new view for each scene. This means that the view you've provided will be both the new view and the old view, but both will update at the same time.
       return (
         <ScrollView>
-          {currentRoute.potentialRoutes.map((route, index) =>
+          {route.potentialRoutes.map((potentialRoute, index) =>
             <BasicView
-              onClick = { () => onTextClick(route.id) }
-              itemText = { route.title }
+              onClick = { () => onTextClick(potentialRoute.id) }
+              itemText = { potentialRoute.title }
               key= { index }
             />
           )}
