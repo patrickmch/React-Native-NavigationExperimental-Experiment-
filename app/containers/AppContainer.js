@@ -12,7 +12,7 @@ import { _renderScene } from '../components/_renderScene'
 const {
 	CardStack: NavigationCardStack,
 	StateUtils: NavigationStateUtils,
-  Card: NavigationCard
+  Header: NavigationHeader
 } = NavigationExperimental
 
 //TODO how to handle back button???
@@ -27,9 +27,17 @@ class AppContainer extends Component {
           navigationState = { navigationState }
           renderScene = { ({scene}) => _renderScene({scene}, this.props) }
           renderHeader = {props => (
-              <View>
-                <Text>{ routes[index].title }</Text>
-              </View>
+              <NavigationHeader
+                {...props}
+                renderTitleComponent={props => {
+                    return (
+                      <NavigationHeader.Title>
+                        { props.scene.route.title }
+                      </NavigationHeader.Title>
+                    )
+                }
+              }
+              />//NavigationHeader
             )
           }//renderHeader
         />//NavigationCardStack
