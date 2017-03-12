@@ -19,16 +19,17 @@ const {
 
 class AppContainer extends Component {
   render() {
-    const { navigationState } = this.props
-    const { routes, index } = navigationState
+    const { navigationState, onTextClick, navigateBack } = this.props
     return (
         <NavigationCardStack
           style = { newStyle.testStyle }
           navigationState = { navigationState }
-          renderScene = { ({scene}) => _renderScene({scene}, this.props) }
+          onNavigateBack={ navigateBack }
+          renderScene = { ({scene}) => _renderScene({scene, navigationState, onTextClick}) }
           renderHeader = {props => (
               <NavigationHeader
                 {...props}
+                onNavigateBack = { navigateBack }
                 renderTitleComponent={props => {
                     return (
                       <NavigationHeader.Title>

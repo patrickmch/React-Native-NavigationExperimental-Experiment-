@@ -8,8 +8,7 @@ import {
   ScrollView,
 } from 'react-native'
 
-export function _renderScene({scene}, props){
-  const { onTextClick } = props
+export function _renderScene({scene, navigationState, onTextClick}){
   const { route, index } = scene
 
   //if there are no potential routes keep from erroring
@@ -18,10 +17,6 @@ export function _renderScene({scene}, props){
       return(
         <View>
           <Text>{ route.info }</Text>
-          <PreviousScene
-              goBack={ props.navigateBack }
-              backText={ props.backText }
-          />
         </View>
       )
   } else {
@@ -34,10 +29,7 @@ export function _renderScene({scene}, props){
               key= { index }
             />
           )}
-          <PreviousScene
-            goBack={ props.navigateBack }
-            backText={ props.backText }
-          />
+          
         </ScrollView>
       )
   }
